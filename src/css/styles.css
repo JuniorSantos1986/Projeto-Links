@@ -1,97 +1,222 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  height: 100vh;
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.5;
 }
 
-.btn {
-  background-color: blue; /* azul */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition-duration: 0.4s;
-}
-.btn:hover {
-    background-color: darkblue; /* azul escuro */
-  }
-
+/* =============================================
+   Header
+============================================= */
 .headerExample {
-  height: 100px;
+  background-color: #ffffff;
+  padding: 1rem 5%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
 }
 
-.logoAti{
-  height: 90px;
-  margin: 10px;
-  margin-top: 30px;
-  border-radius: 1rem;
+.logoAti {
+  max-height: 80px;
+  width: auto;
+  border-radius: 0.75rem;
 }
 
-.mainExample {
-  background-color: white;
-  height: 400px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.footerExample {
-  background-color: white;
-  height: 100px;
-  text-align: center;
-  margin-top: 50px;
-} 
-
-.headerContainerLinks{
+.headerContainerLinks {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
 }
 
 .headerContainerLinks a {
-  background-color: blue;
+  background-color: #0066cc;
   color: white;
-  padding: 10px 20px;
+  padding: 0.7rem 1.4rem;
   text-decoration: none;
-  border-radius: .75rem;
-  margin-right: 20px;
-  margin-top: 50px;
-  width: 100px;
-}
-.headerContainerLinks a:hover {
-  background-color: darkblue;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 
-.containerPlanilhas{
+.headerContainerLinks a:hover {
+  background-color: #004080;
+}
+
+/* =============================================
+   Main
+============================================= */
+.mainExample {
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mainExample h1 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.mainExample h3 {
+  font-size: clamp(1.1rem, 4vw, 1.35rem);
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.divlinks {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  border: 2px solid blue;
+  gap: 1.2rem;
+}
+
+.containerPlanilhas {
+  width: 100%;
+  max-width: 700px;
+  background-color: white;
+  border: 2px solid #0066cc;
   border-radius: 0.75rem;
-  width: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 70px;
 }
 
 .containerPlanilhas p {
-  padding: 0 0 0 20px;
-  font-weight: bold;
+  flex: 1;
+  padding: 1.1rem 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
-.containerPlanilhas button{
-  height: 100%;
-  margin: 0;
-  border-radius: 0 10px 10px 0;
+.containerPlanilhas button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 0 1.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.containerPlanilhas button:hover {
+  background-color: #004080;
+}
+
+/* =============================================
+   Footer
+============================================= */
+.footerExample {
+  background-color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 1px solid #e0e0e0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.imgGov {
+  max-height: 60px;
+  width: auto;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+}
+
+/* =============================================
+   Media Queries - Responsividade
+============================================= */
+
+/* Tablets e telas menores (até ~1024px) */
+@media (max-width: 1024px) {
+  .headerExample {
+    padding: 1rem 6%;
+  }
+  
+  .logoAti {
+    max-height: 70px;
+  }
+  
+  .containerPlanilhas {
+    max-width: 90%;
+  }
+}
+
+/* Mobile grande / tablets pequenos (~768px ↓) */
+@media (max-width: 768px) {
+  .headerExample {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 5%;
+  }
+  
+  .logoAti {
+    margin: 0 auto;
+    max-height: 65px;
+  }
+  
+  .headerContainerLinks {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .mainExample {
+    padding: 1.5rem 6%;
+  }
+}
+
+/* Mobile pequeno (~480px ↓) */
+@media (max-width: 480px) {
+  .mainExample {
+    padding: 1.2rem 5%;
+  }
+  
+  .mainExample h1 {
+    font-size: 1.65rem;
+  }
+  
+  .mainExample h3 {
+    font-size: 1.15rem;
+  }
+  
+  .containerPlanilhas {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .containerPlanilhas p {
+    padding: 1rem 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid #0066cc33;
+  }
+  
+  .containerPlanilhas button {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.05rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+  }
+  
+  .imgGov {
+    max-height: 50px;
+  }
 }
