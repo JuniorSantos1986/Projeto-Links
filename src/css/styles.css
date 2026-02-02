@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+}
+
+.btn {
+  background-color: blue; /* azul */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+.btn:hover {
+    background-color: darkblue; /* azul escuro */
+  }
+
+.headerExample {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logoAti{
+  height: 90px;
+  margin: 10px;
+  margin-top: 30px;
+  border-radius: 1rem;
+}
+
+.mainExample {
+  background-color: white;
+  height: 400px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.footerExample {
+  background-color: white;
+  height: 100px;
+  text-align: center;
+  margin-top: 50px;
+} 
+
+.headerContainerLinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainerLinks a {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: .75rem;
+  margin-right: 20px;
+  margin-top: 50px;
+  width: 100px;
+}
+.headerContainerLinks a:hover {
+  background-color: darkblue;
+}
+
+.containerPlanilhas{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  border: 2px solid blue;
+  border-radius: 0.75rem;
+  width: 600px;
+}
+
+.containerPlanilhas p {
+  padding: 0 0 0 20px;
+  font-weight: bold;
+}
+
+.containerPlanilhas button{
+  height: 100%;
+  margin: 0;
+  border-radius: 0 10px 10px 0;
+}
