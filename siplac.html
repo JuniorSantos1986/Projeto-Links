@@ -18,6 +18,11 @@
     <h2>Acesso às planilhas de monitoramento do SIPLAC</h2>
     <br>
     <h4>Escolha uma das opções abaixo, para acessar a planilha correspondente:</h4>
+    <div id="linksContainer"></div>
+    <div class="addButtonMore">
+      <button id="addButton">+</button>
+      <label for="addButton" class="addButtonLabel">Adicionar Novo Link</label>
+    </div>
     <br>
     <div class="divlinks">
     <div class="containerPlanilhas">
@@ -25,10 +30,22 @@
       <button class="btn" onclick="window.open('https://docs.google.com/spreadsheets/d/13xKxY-l3vr2UeRvrTqOF6Ct3Mt0OADj1uxLPPQ-grvs/edit?gid=0#gid=0', '_blank')">Visualizar</button>
     </div>
   </main>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Adicionar Novo Link</h3>
+      <label for="linkInput">Link da Planilha:</label>
+      <input type="url" id="linkInput" placeholder="https://exemplo.com/planilha">
+      <label for="descInput">Descrição:</label>
+      <input type="text" id="descInput" placeholder="Do que se trata a planilha">
+      <button id="confirmButton">Adicionar</button>
+    </div>
+  </div>
   <footer class="footerExample">
     <img src="assets/images/img_gov.jpeg" alt="Governo Federal" class="imgGov">
     <p>&copy; Feito por Júnior Santos - 2026 Links de planilhas. Todos os direitos reservados.</p>
   </footer>
+  <script src="src/js/index.js"></script>
 </body>
 </html>
 
