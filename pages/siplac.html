@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planilhas SIPLAC</title>
+  <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body class="theme-vibrant" data-page-key="siplac">
+  <header class="headerExample">
+    <div class="brandBlock">
+    <img src="../assets/images/logo-sheethub.jpeg" alt="Logo SheetHub" class="brandLogo">
+      <div class="brandTitle">
+        <h1>SheetHub</h1>
+        <span>Acesso centralizado para monitoramento do SGC e SIPLAC</span>
+      </div>
+    </div>
+    <nav class="mainMenu" aria-label="Menu principal">
+      <details>
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="../index.html">INICIO</a></li>
+          <li><a href="sgc.html">SGC</a></li>
+          <li><a href="siplac.html" class="active" aria-current="page">SIPLAC</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+  <main class="mainExample">
+    <section class="homeIntro">
+      <h2>Monitoramento de Planilhas</h2>
+      <h4>Selecione abaixo uma planilha do <strong>SIPLAC</strong> para acessar o arquivo correspondente.</h4>
+    </section>
+    <div class="addButtonMore">
+      <button id="addButton" type="button" aria-label="Adicionar novo link">+</button>
+      <label for="addButton" class="addButtonLabel">Adicionar Novo Link</label>
+    </div>
+    <div class="divlinks">
+    <div class="containerPlanilhas">
+      <p>Planilha de bugs e melhorias do SIPLAC</p>
+      <a class="planilhaAction" href="https://docs.google.com/spreadsheets/d/13xKxY-l3vr2UeRvrTqOF6Ct3Mt0OADj1uxLPPQ-grvs/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">Visualizar</a>
+    </div>
+    <div id="linksContainer"></div>
+    </div>
+  </main>
+  <div id="modal" class="modal">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+      <h3 id="modalTitle">Adicionar Novo Link</h3>
+      <label for="linkInput">Link da Planilha:</label>
+      <input type="url" id="linkInput" placeholder="https://exemplo.com/planilha">
+      <label for="descInput">Descrição:</label>
+      <input type="text" id="descInput" placeholder="Do que se trata a planilha">
+      <button id="confirmButton" type="button">Adicionar</button>
+    </div>
+  </div>
+  <footer class="footerExample">
+    <p>&copy; Feito por Júnior Santos - 2026 Links de planilhas. Todos os direitos reservados.</p>
+  </footer>
+  <script src="../src/js/menu.js"></script>
+  <script src="../src/js/index.js"></script>
+</body>
+</html>
+
+
+
+  

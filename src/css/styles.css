@@ -1,0 +1,494 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1757a6;
+  --primary-dark: #0f3f7b;
+  --text-main: #1f2937;
+  --text-soft: #4b5563;
+  --text-muted: #334155;
+  --border-soft: #d7dee8;
+  --surface: #ffffff;
+  --header-start: #1c5fae;
+  --header-end: #2a74c7;
+  --header-border: #1d5da7;
+  --header-shadow: #0b2a5266;
+  --header-title: #f8fbff;
+  --header-subtitle: #dbeafe;
+  --menu-button-text: #eff6ff;
+  --menu-button-bg: #ffffff1a;
+  --menu-button-border: #dbeafe80;
+  --menu-button-open-border: #eff6ff;
+  --menu-button-open-text: #ffffff;
+}
+
+.theme-vibrant {
+  --header-start: #1e67bf;
+  --header-end: #1757a6;
+  --header-border: #1757a6;
+  --header-shadow: #0b2a5280;
+}
+
+.theme-soft {
+  --header-start: #1c5fae;
+  --header-end: #2a74c7;
+  --header-border: #1d5da7;
+  --header-shadow: #0b2a5266;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #f5f8fc 0%, #f7f9fc 45%, #eef2f8 100%);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* =============================================
+   Header
+============================================= */
+.headerExample {
+  background: linear-gradient(90deg, var(--header-start) 0%, var(--header-end) 100%);
+  padding: 1.25rem 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: 0 10px 24px -16px var(--header-shadow);
+}
+
+h4 {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+.brandBlock h1 {
+  font-size: clamp(1.3rem, 3.4vw, 1.7rem);
+  color: var(--header-title);
+  letter-spacing: 0.02em;
+}
+
+.brandTitle {
+  color: var(--header-subtitle);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brandLogo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.brandBlock p {
+  color: var(--header-subtitle);
+  font-size: 0.95rem;
+}
+
+.mainMenu {
+  position: relative;
+}
+
+.mainMenu details {
+  position: relative;
+}
+
+.mainMenu summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  color: var(--menu-button-text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: var(--menu-button-bg);
+  border: 1px solid var(--menu-button-border);
+  border-radius: 0.55rem;
+  padding: 0.45rem 0.9rem;
+  min-width: 110px;
+  text-align: center;
+}
+
+.mainMenu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mainMenu summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+.mainMenu details[open] summary {
+  border-color: var(--menu-button-open-border);
+  color: var(--menu-button-open-text);
+}
+
+.mainMenu details[open] summary::after {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.mainMenu ul {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  min-width: 170px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 0.7rem;
+  padding: 0.45rem;
+  box-shadow: 0 14px 24px -20px #0d2f595c;
+  z-index: 20;
+}
+
+.mainMenu li + li {
+  margin-top: 0.25rem;
+}
+
+.mainMenu a {
+  display: block;
+  color: #0b2a52;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.mainMenu a:hover,
+.mainMenu a:focus-visible {
+  background-color: #eaf2fb;
+  color: var(--primary);
+}
+
+.mainMenu a.active {
+  background-color: #eaf2fb;
+  color: var(--primary);
+}
+
+.mainMenu summary:focus-visible,
+.mainMenu a:focus-visible,
+.containerPlanilhas button:focus-visible,
+.containerPlanilhas .planilhaAction:focus-visible,
+#addButton:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+
+/* =============================================
+   Main
+============================================= */
+.mainExample {
+  flex: 1;
+  padding: 2.25rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.homeIntro {
+  background: var(--surface);
+  border: 1px solid #dde3ec;
+  border-radius: 0.9rem;
+  padding: 2rem;
+  box-shadow: 0 20px 30px -24px #0f2e5738;
+}
+
+.homeIntro h2 {
+  margin-bottom: 0.8rem;
+  color: #102a4a;
+  font-size: clamp(1.35rem, 3.5vw, 1.8rem);
+  font-weight: 700;
+}
+
+.divlinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  max-height: 300px;  /* Defina uma altura máxima (ajuste conforme necessário, ex.: 300px para menos espaço) */
+  overflow-y: auto;   /* Adicione esta linha para ativar a barra de rolagem vertical */
+  padding-right: 0.5rem;  /* Opcional: espaço para a barra de rolagem não cortar o conteúdo */
+  scrollbar-width: thin;
+}
+
+.containerPlanilhas {
+  width: 100%;
+  max-width: 700px;
+  background-color: var(--surface);
+  border: 1px solid #cdd9ea;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 70px;
+  box-shadow: 0 12px 24px -24px #0d2f5947;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.containerPlanilhas:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px -20px #0d2f5954;
+}
+
+.containerPlanilhas p {
+  flex: 1;
+  padding: 1.1rem 1.4rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.containerPlanilhas button,
+.containerPlanilhas .planilhaAction {
+  background: linear-gradient(180deg, #1e67bf 0%, var(--primary) 100%);
+  color: white;
+  border: none;
+  padding: 0 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.containerPlanilhas button:hover,
+.containerPlanilhas .planilhaAction:hover {
+  background: var(--primary-dark);
+}
+
+/* =============================================
+   Footer
+============================================= */
+.footerExample {
+  background-color: var(--surface);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid var(--border-soft);
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+/* =============================================
+   Media Queries - Responsividade
+============================================= */
+
+/* Tablets e telas menores (até ~1024px) */
+@media (max-width: 1024px) {
+  .headerExample {
+    padding: 1rem 6%;
+  }
+  
+  .containerPlanilhas {
+    max-width: 90%;
+  }
+}
+
+/* Mobile grande / tablets pequenos (~768px ↓) */
+@media (max-width: 768px) {
+  .headerExample {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem 5%;
+  }
+
+  .brandBlock {
+    text-align: left;
+  }
+
+  .mainMenu ul {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .mainExample {
+    padding: 1.5rem 6%;
+  }
+
+  .addButtonMore {
+    justify-content: center;
+  }
+}
+
+/* Mobile pequeno (~480px ↓) */
+@media (max-width: 480px) {
+  .mainExample {
+    padding: 1.2rem 5%;
+  }
+  
+  .homeIntro {
+    padding: 1.4rem;
+  }
+
+  .homeIntro h2 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 0.96rem;
+  }
+  
+  .containerPlanilhas {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .containerPlanilhas p {
+    padding: 1rem 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid #0066cc33;
+    font-size: 0.96rem;
+  }
+  
+  .containerPlanilhas button,
+  .containerPlanilhas .planilhaAction {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.05rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    justify-content: center;
+  }
+  
+}
+
+/* =============================================
+   Modal e Botões Adicionais
+============================================= */
+.addButtonMore {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  justify-content: flex-end;
+}
+
+#addButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#addButton:hover {
+  background-color: var(--primary-dark);
+}
+
+.addButtonLabel {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+#linksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 0.5rem;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  background: transparent;
+  border: 0;
+  line-height: 1;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+#confirmButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#confirmButton:hover {
+  background-color: #218838;
+}
